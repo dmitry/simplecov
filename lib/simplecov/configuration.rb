@@ -16,7 +16,7 @@ module SimpleCov::Configuration
   #
   def root(root=nil)
     return @root if defined? @root and root.nil?
-    @root = File.expand_path(root || Dir.getwd)
+    @root = File.expand_path(root || ENV['PWD'] || Dir.getwd)
   end
 
   #
